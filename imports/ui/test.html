@@ -1,0 +1,17 @@
+<!-- 循环语句 -->
+<body>
+    <ul>
+        {{#each tasks}}
+          {{> task}}
+        {{/each}}
+    </ul>
+</body>
+
+<template name="task">
+    <li>{{text}}</li>
+</template>
+<!-- 判断语句 -->
+
+<body>
+    <div class="{{#if checked}}checked{{/if}}"></div>
+</body>
