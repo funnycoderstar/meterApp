@@ -5,6 +5,7 @@
 <body>
   <div>
     {{ > myTemplate}}
+    {{ > examplePage }}
   </div>
 </body>
 
@@ -13,8 +14,30 @@
   <button class="myClass">Class</button>
   <button id="myId">Id</button>
 </template>
-<!-- <template name="myTemplate">
 
-</template> -->
+<!-- <template name="header">  
+  <header>{{> Template.contentBlock}} 111</header>
+</template>
+<template name="examplePage">  
+  {{#header}}222{{/header}}
+</template>   -->
+
+<template name="header">  
+  <header>
+    {{#if ready}}
+      {{> Template.contentBlock}}
+    {{else}}
+      {{> Template.elseBlock}}
+    {{/if}}
+  </header>
+</template>
+
+<template name="examplePage">  
+  {{#header ready=false}}
+    Example Page
+  {{else}}
+    Loading...
+  {{/header}}
+</template>  
 
 
